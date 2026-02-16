@@ -1,4 +1,4 @@
-![Project Banner](docs/images/project_banner.png)
+![Project Banner](docs/images/project_banner.svg)
 
 # Winter Internship – Task 2 For Team (Photon)
 ## Smart Multi-Vendor E-Commerce Marketplace (SMV-ECOM)
