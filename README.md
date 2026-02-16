@@ -1,123 +1,77 @@
-# 🛒 Smart Multi-Vendor E-Commerce Marketplace (SMV-ECOM)
+![Project Banner](docs/images/project_banner.png)
 
-![Project Banner](docs/images/dashboard_preview.png)
+# Winter Internship – Task 2 For Team (Photon)
+## Smart Multi-Vendor E-Commerce Marketplace (SMV-ECOM)
+### Project Documentation – MERN Stack
 
-A production-ready **MERN Stack (MongoDB, Express, React, Node.js)** E-Commerce Marketplace application. This platform enables multiple sellers to list products, customers to shop, and admins to manage the entire ecosystem.
+## 1. Project Duration
+17th Jan to 16th Feb , 2026
 
-## 🚀 Live Demo & Repository
-- **GitHub Repository**: [https://github.com/Rashidzada/smv_ecom](https://github.com/Rashidzada/smv_ecom)
+## 2. Project Overview
+The Smart Multi-Vendor E-Commerce Marketplace is a real-world MERN stack application where multiple sellers can list and sell products while customers can browse, add to cart, and place orders.
 
-## ✨ Features
+## 3. User Roles
+- **Admin**: Platform management, seller approval, analytics.
+- **Seller**: Product management, order handling, revenue tracking.
+- **Customer**: Product browsing, cart, order placement and tracking.
 
-### 👤 User Roles
-- **Admin**: Complete platform control, User management, Seller approvals, Analytics dashboard.
-- **Seller**: Product management (CRUD), Order processing, Sales analytics.
-- **Customer**: Browse products, Shopping Cart, Checkout, Order tracking.
+## 4. Functional Requirements
+- Secure authentication using JWT
+- Multi-vendor product management
+- Product categories and images
+- Cart and checkout system
+- Order creation and status tracking
+- Admin, seller, and customer dashboards
 
-### 🛍️ Core Functionality
-- **Authentication**: Secure JWT-based auth with Role-Based Access Control (RBAC).
-- **Product Management**: Categories, Image Uploads, Inventory tracking.
-- **Shopping Experience**: Filter & Search, Responsive Design, Cart management.
-- **Order System**: Complete order lifecycle (Placed -> Processing -> Shipped -> Delivered).
-- **Dashboards**: Specialized dashboards for Admin, Seller, and Customers.
+## 5. Non-Functional Requirements
+- Secure and scalable APIs
+- Responsive UI for all devices
+- Clean and maintainable codebase
+- Proper error handling and validations
 
-## 🛠️ Technology Stack
+## 6. Technology Stack
+- **Frontend**: React.js, Redux Toolkit, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Mongoose)
+- **Other**: Multer for image uploads
+- **Deployment**: Vercel, Render, MongoDB Atlas
 
-**Frontend:**
-- React.js 19
-- Redux Toolkit (State Management)
-- Tailwind CSS v4 (Styling)
-- React Router DOM
-- Vite (Build Tool)
+## 7. Database Schemas
+- **User**: name, email, password, role
+- **Product**: title, description, price, stock, images, sellerId
+- **Order**: customerId, items, totalAmount, status, createdAt
+- **Category**: name, parentCategory
 
-**Backend:**
-- Node.js & Express.js
-- MongoDB & Mongoose (Database)
-- JWT (Authentication)
-- Multer (File Uploads)
+## 8. API Modules
+Authentication APIs, Product APIs, Category APIs, Cart APIs, Order APIs, Admin APIs following REST standards.
 
-## 📸 Screenshots
+## 9. Folder Structure
+- **Frontend**: components, pages, redux, services, hooks
+- **Backend**: controllers, models, routes, middleware, utils, uploads
 
-| Product View | Dashboard |
-|:---:|:---:|
-| ![Product](docs/images/product_preview_1.jpg) | ![Dashboard](docs/images/dashboard_preview.png) |
+## 10. Development Timeline (4 Weeks)
+- **Week 1**: Project setup, authentication, role management
+- **Week 2**: Product, category, and cart modules
+- **Week 3**: Order flow and dashboards
+- **Week 4**: Security, testing, deployment, and documentation
 
-## ⚙️ Installation & Setup
+## 11. Security Guidelines
+- Password hashing using bcrypt
+- JWT-protected routes
+- Role-based authorization
+- Environment variables for secrets
 
-Follow these steps to run the complete project locally.
+## 12. Testing & Deployment
+Test APIs using Postman, verify frontend flows, deploy backend and frontend on cloud platforms.
 
-### Prerequisites
-- Node.js (v18+)
-- MongoDB (Local or Atlas)
-- Git
+## 13. Intern Deliverables
+- Fully working e-commerce application
+- Clean GitHub repository
+- Live deployed link
+- Final project demo
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Rashidzada/smv_ecom.git
-cd smv_ecom
-```
+### Submission Requirements
+Submit your complete project via Google Classroom. Upload all necessary code, files, and folders required to run your project properly. Incomplete or missing files may result in rejection.
 
-### 2. Backend Setup
-```bash
-cd server
-# Install dependencies
-npm install
-
-# Create .env file
-cp .env.example .env
-
-# Seed the database (Optional: Populates random data)
-npm run seed
-
-# Start the server
-npm run dev
-```
-
-> **Note**: Ensure your `.env` file uses your MongoDB Connection string.
-
-### 3. Frontend Setup
-Open a new terminal:
-```bash
-cd client
-# Install dependencies
-npm install
-
-# Start the frontend
-npm run dev
-```
-
-### 4. Access the App
-- **Frontend**: [http://localhost:5173](http://localhost:5173)
-- **Backend API**: [http://localhost:5000](http://localhost:5000)
-
-## 🔑 Default Login Credentials
-Use these accounts to test different roles (Password: `password123`):
-
-| Role | Email |
-|------|-------|
-| **Admin** | `admin@smv.com` |
-| **Seller** | `seller1@smv.com` |
-| **Customer** | `john@smv.com` |
-
-## 📂 Project Structure
-```text
-smv-ecom/
-├── client/          # Frontend React Application
-│   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── pages/       # Page views
-│   │   ├── features/    # Redux slices
-│   └── ...
-├── server/          # Backend Node.js API
-│   ├── controllers/ # Logic for routes
-│   ├── models/      # Mongoose schemas
-│   ├── routes/      # API endpoints
-│   └── ...
-└── docs/            # Documentation assets
-```
-
-## 🤝 Contributing
-Contributions are welcome! Please fork the repository and create a pull request.
-
-## 📝 License
-This project is open-source and available under the [MIT License](LICENSE).
+### Evaluation Criteria
+(To be filled by evaluator)
