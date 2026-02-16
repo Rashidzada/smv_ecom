@@ -55,7 +55,12 @@ const SellerProducts = () => {
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         <img
-                          src={product.images?.[0] ? `/uploads/${product.images[0]}` : 'https://placehold.co/40x40/e2e8f0/64748b?text=N'}
+                          src={product.images?.[0]
+                            ? (product.images[0].startsWith('http')
+                              ? product.images[0]
+                              : `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${product.images[0]}`)
+                            : 'https://placehold.co/40x40/e2e8f0/64748b?text=N'
+                          }
                           alt="" className="w-10 h-10 rounded-lg object-cover"
                         />
                         <span className="font-medium text-gray-900 truncate max-w-[200px]">{product.name}</span>

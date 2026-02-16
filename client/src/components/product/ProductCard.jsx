@@ -3,9 +3,14 @@ import { HiStar } from 'react-icons/hi2';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 const ProductCard = ({ product }) => {
-  const imgSrc = product.images?.[0]
-    ? `/uploads/${product.images[0]}`
-    : 'https://placehold.co/400x300/e2e8f0/64748b?text=No+Image';
+  // Helper to construct image URL
+  const getImageUrl = (image) => {
+    if (!image) return 'https://placehold.co/400x300/e2e8f0/64748b?text=No+Image';
+    if (image.startsWith('http')) return image;
+    return `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${image}`;
+  };
+
+  const imgSrc = getImageUrl(product.images?.[0]);
 
   return (
     <Link to={`/products/${product._id}`} className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">

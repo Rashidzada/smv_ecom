@@ -33,7 +33,7 @@ const ProductDetailPage = () => {
   if (loading || !product) return <LoadingSpinner size="lg" />;
 
   const images = product.images?.length > 0
-    ? product.images.map((img) => `/uploads/${img}`)
+    ? product.images.map((img) => (img.startsWith('http') ? img : `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${img}`))
     : ['https://placehold.co/600x400/e2e8f0/64748b?text=No+Image'];
 
   return (

@@ -107,7 +107,7 @@ const CartPage = () => {
           {items.map((item) => {
             const product = item.product;
             const imgSrc = product.images?.[0]
-              ? `/uploads/${product.images[0]}`
+              ? (product.images[0].startsWith('http') ? product.images[0] : `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${product.images[0]}`)
               : 'https://placehold.co/80x80/e2e8f0/64748b?text=N';
             return (
               <div key={product._id} className="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200">

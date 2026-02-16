@@ -123,7 +123,10 @@ const SellerProductForm = () => {
             <div className="flex gap-2 flex-wrap">
               {existingImages.map((img) => (
                 <div key={img} className="relative">
-                  <img src={`/uploads/${img}`} alt="" className="w-20 h-20 object-cover rounded-lg" />
+                  <img
+                    src={img.startsWith('http') ? img : `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${img}`}
+                    alt="" className="w-20 h-20 object-cover rounded-lg"
+                  />
                   <button type="button" onClick={() => removeExistingImage(img)}
                     className="absolute -top-1 -right-1 bg-red-500 text-white w-5 h-5 rounded-full text-xs flex items-center justify-center">
                     x

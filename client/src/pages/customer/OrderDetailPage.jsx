@@ -51,7 +51,7 @@ const OrderDetailPage = () => {
           <h2 className="font-semibold text-gray-900 mb-3">Items</h2>
           {order.items?.map((item, idx) => {
             const imgSrc = item.image
-              ? `/uploads/${item.image}`
+              ? (item.image.startsWith('http') ? item.image : `${import.meta.env.VITE_API_URL.replace('/api', '')}/uploads/${item.image}`)
               : 'https://placehold.co/60x60/e2e8f0/64748b?text=N';
             return (
               <div key={idx} className="flex items-center gap-3">
