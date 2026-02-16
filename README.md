@@ -5,6 +5,10 @@
 
 ### Project Documentation – MERN Stack
 
+## 🚀 Live Demo
+- **Frontend (Store)**: [https://smv-ecom-pied.vercel.app/](https://smv-ecom-pied.vercel.app/)
+- **Backend API**: [https://smv-ecom.onrender.com/api](https://smv-ecom.onrender.com/api)
+
 ## 1. Project Duration
 17th Jan to 16th Feb , 2026
 
