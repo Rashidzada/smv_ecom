@@ -1,78 +1,123 @@
-# Smart Multi-Vendor E-Commerce Marketplace (SMV-ECOM)
+# 🛒 Smart Multi-Vendor E-Commerce Marketplace (SMV-ECOM)
 
-Production-style MERN marketplace where admins manage the platform, sellers manage products/orders, and customers browse, purchase, and track orders.
+![Project Banner](docs/images/dashboard_preview.png)
 
-## Tech Stack
-- Frontend: React, Redux Toolkit, React Router, Tailwind CSS, Axios
-- Backend: Node.js, Express.js, JWT Auth, Multer
-- Database: MongoDB + Mongoose
+A production-ready **MERN Stack (MongoDB, Express, React, Node.js)** E-Commerce Marketplace application. This platform enables multiple sellers to list products, customers to shop, and admins to manage the entire ecosystem.
 
-## Implemented Scope
-- JWT authentication and profile APIs
-- Role-based authorization (`admin`, `seller`, `customer`)
-- Seller approval flow by admin
-- Category management (with optional parent category)
-- Product listing/search/filter/pagination
-- Seller product CRUD with image upload
-- Customer cart management
-- Checkout with shipping address validation
-- Order creation, status flow, and cancellation
-- Admin analytics, user/seller/order management dashboards
-- Seller analytics and order status update dashboard
+## 🚀 Live Demo & Repository
+- **GitHub Repository**: [https://github.com/Rashidzada/smv_ecom](https://github.com/Rashidzada/smv_ecom)
 
-## Project Structure
-```text
-smv/
-  client/    # React frontend
-  server/    # Express backend
+## ✨ Features
+
+### 👤 User Roles
+- **Admin**: Complete platform control, User management, Seller approvals, Analytics dashboard.
+- **Seller**: Product management (CRUD), Order processing, Sales analytics.
+- **Customer**: Browse products, Shopping Cart, Checkout, Order tracking.
+
+### 🛍️ Core Functionality
+- **Authentication**: Secure JWT-based auth with Role-Based Access Control (RBAC).
+- **Product Management**: Categories, Image Uploads, Inventory tracking.
+- **Shopping Experience**: Filter & Search, Responsive Design, Cart management.
+- **Order System**: Complete order lifecycle (Placed -> Processing -> Shipped -> Delivered).
+- **Dashboards**: Specialized dashboards for Admin, Seller, and Customers.
+
+## 🛠️ Technology Stack
+
+**Frontend:**
+- React.js 19
+- Redux Toolkit (State Management)
+- Tailwind CSS v4 (Styling)
+- React Router DOM
+- Vite (Build Tool)
+
+**Backend:**
+- Node.js & Express.js
+- MongoDB & Mongoose (Database)
+- JWT (Authentication)
+- Multer (File Uploads)
+
+## 📸 Screenshots
+
+| Product View | Dashboard |
+|:---:|:---:|
+| ![Product](docs/images/product_preview_1.jpg) | ![Dashboard](docs/images/dashboard_preview.png) |
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the complete project locally.
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB (Local or Atlas)
+- Git
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Rashidzada/smv_ecom.git
+cd smv_ecom
 ```
 
-## Local Setup
-1. Backend
+### 2. Backend Setup
 ```bash
 cd server
+# Install dependencies
 npm install
+
+# Create .env file
 cp .env.example .env
+
+# Seed the database (Optional: Populates random data)
 npm run seed
+
+# Start the server
 npm run dev
 ```
 
-2. Frontend (new terminal)
+> **Note**: Ensure your `.env` file uses your MongoDB Connection string.
+
+### 3. Frontend Setup
+Open a new terminal:
 ```bash
 cd client
+# Install dependencies
 npm install
+
+# Start the frontend
 npm run dev
 ```
 
-3. Open `http://localhost:5173`
+### 4. Access the App
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+- **Backend API**: [http://localhost:5000](http://localhost:5000)
 
-## Environment Variables (`server/.env`)
-```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/smv
-JWT_SECRET=change_this_in_production
-JWT_EXPIRE=7d
-NODE_ENV=development
+## 🔑 Default Login Credentials
+Use these accounts to test different roles (Password: `password123`):
+
+| Role | Email |
+|------|-------|
+| **Admin** | `admin@smv.com` |
+| **Seller** | `seller1@smv.com` |
+| **Customer** | `john@smv.com` |
+
+## 📂 Project Structure
+```text
+smv-ecom/
+├── client/          # Frontend React Application
+│   ├── src/
+│   │   ├── components/  # Reusable UI components
+│   │   ├── pages/       # Page views
+│   │   ├── features/    # Redux slices
+│   └── ...
+├── server/          # Backend Node.js API
+│   ├── controllers/ # Logic for routes
+│   ├── models/      # Mongoose schemas
+│   ├── routes/      # API endpoints
+│   └── ...
+└── docs/            # Documentation assets
 ```
 
-## Seed Login Accounts
-All passwords: `password123`
-- Admin: `admin@smv.com`
-- Seller (approved): `seller1@smv.com`
-- Seller (approved): `seller2@smv.com`
-- Seller (pending): `seller3@smv.com`
-- Customers: `john@smv.com`, `jane@smv.com`, `bob@smv.com`, `alice@smv.com`, `charlie@smv.com`
+## 🤝 Contributing
+Contributions are welcome! Please fork the repository and create a pull request.
 
-## API Modules
-- `/api/auth`
-- `/api/categories`
-- `/api/products`
-- `/api/cart`
-- `/api/orders`
-- `/api/seller`
-- `/api/admin`
-
-## Notes
-- Uploaded images are served from `/uploads`.
-- Seed script clears existing data before inserting fresh data.
-- This repository should be submitted without generated folders like `node_modules` and `dist`.
+## 📝 License
+This project is open-source and available under the [MIT License](LICENSE).
